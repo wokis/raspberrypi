@@ -3,7 +3,7 @@
 rootfs=$1
 dist="wheezy"
 mirror="http://archive.raspbian.org/raspbian"
-include="net-tools,nano,openssh-server,rsync"
+include="net-tools,isc-dhcp-client,nano,openssh-server,rsync"
 
 aptsources="deb http://archive.raspbian.org/raspbian wheezy main contrib non-free\ndeb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free"
 
