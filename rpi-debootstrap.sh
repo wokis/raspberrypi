@@ -18,15 +18,15 @@ if [ $EUID -ne 0 ]; then
 fi
 
 echo "Executing debootstrap..."
-debootstrap --arch armhf --foreign --variant minbase --include $include $dist $rootfs $mirror
+#debootstrap --arch armhf --foreign --variant minbase --include $include $dist $rootfs $mirror
 
 echo "Preparing for ARM emulation..."
-cp /usr/bin/qemu-arm-static $rootfs/usr/bin
+#cp /usr/bin/qemu-arm-static $rootfs/usr/bin
 
 echo "Executing second stage debootstrap..."
-chroot $rootfs /debootstrap/debootstrap --second-stage
+#chroot $rootfs /debootstrap/debootstrap --second-stage
 
 echo "Configuring RootFS..."
-chroot $rootfs echo -e $aptsources > /etc/apt/sources.list
+echo -e $aptsources > $rootfs/etc/apt/sources.list
 
 echo "RootFS installation into '$rootfs' completed."
