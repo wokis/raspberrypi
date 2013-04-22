@@ -3,7 +3,7 @@
 rootfs=$1
 dist="wheezy"
 mirror="http://archive.raspbian.org/raspbian"
-include="net-tools,isc-dhcp-client,nano,openssh-server,rsync"
+include="net-tools,isc-dhcp-client,nano,openssh-server,rsync,wget"
 
 aptsources="deb http://archive.raspbian.org/raspbian wheezy main contrib non-free\ndeb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free"
 
@@ -28,5 +28,10 @@ chroot $rootfs /debootstrap/debootstrap --second-stage
 
 echo "Configuring RootFS..."
 echo -e $aptsources > $rootfs/etc/apt/sources.list
+
+cat > $rootfs/etc/apt/apt.conf << EOF
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
+EOF
 
 echo "RootFS installation into '$rootfs' completed."
