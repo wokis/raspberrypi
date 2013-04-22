@@ -36,4 +36,12 @@ APT::Install-Recommends "0";
 APT::Install-Suggests "0";
 EOF
 
+cat > $rootfs/network/interfaces << EOF
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+EOF
+
 echo "RootFS installation into '$rootfs' completed."
