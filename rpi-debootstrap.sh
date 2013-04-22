@@ -32,8 +32,8 @@ echo "Configuring RootFS..."
 echo -e $aptsources > $rootfs/etc/apt/sources.list
 
 cat > $rootfs/etc/apt/apt.conf << EOF
-APT::Get::Install-Recommends "0";
-APT::Get::Install-Suggests "0";
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
 EOF
 
 cat > $rootfs/network/interfaces << EOF
