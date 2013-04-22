@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# requires debootstrap, qemu-arm-static
+
 rootfs=$1
 dist="wheezy"
 mirror="http://archive.raspbian.org/raspbian"
