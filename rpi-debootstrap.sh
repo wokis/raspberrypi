@@ -36,7 +36,7 @@ APT::Install-Recommends "0";
 APT::Install-Suggests "0";
 EOF
 
-cat > $rootfs/network/interfaces << EOF
+cat > $rootfs/etc/network/interfaces << EOF
 auto lo
 iface lo inet loopback
 
