@@ -3,7 +3,7 @@
 # requires debootstrap, qemu-arm-static
 
 rootfs=$1
-dist="wheezy"
+dist="stretch"
 mirror="http://archive.raspbian.org/raspbian"
 include="net-tools,isc-dhcp-client,nano,openssh-server,rsync,wget"
 
