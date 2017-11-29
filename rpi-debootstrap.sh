@@ -20,7 +20,7 @@ if [ $EUID -ne 0 ]; then
 fi
 
 echo "Executing debootstrap..."
-debootstrap --arch armhf --foreign --variant minbase --include $include $dist $rootfs $mirror
+debootstrap --arch armhf --foreign --variant minbase --no-check-gpg --include $include $dist $rootfs $mirror
 
 echo "Preparing for ARM emulation..."
 cp /usr/bin/qemu-arm-static $rootfs/usr/bin
