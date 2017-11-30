@@ -7,7 +7,7 @@ dist="stretch"
 mirror="http://archive.raspbian.org/raspbian"
 include="net-tools,isc-dhcp-client,nano,openssh-server,rsync,wget"
 
-aptsources="deb http://archive.raspbian.org/raspbian wheezy main contrib non-free\ndeb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free"
+aptsources="deb http://archive.raspbian.org/raspbian stretch main contrib non-free\ndeb-src http://archive.raspbian.org/raspbian stretch main contrib non-free"
 
 if [ "$rootfs" == "" ]; then
 	echo "No directory to install to given."
